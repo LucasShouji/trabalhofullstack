@@ -1,7 +1,7 @@
 {
-  "name": "cursodevback",
+  "name": "trabalho_front_back",
   "version": "1.0.0",
-  "description": "Trabalho Java Front_End/Back",
+  "description": "Trabalho Java Front_End/Back_End",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
