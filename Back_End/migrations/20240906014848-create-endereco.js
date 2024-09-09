@@ -4,7 +4,7 @@ module.exports = {
  up: async(queryInterface, Sequelize) => {
    await queryInterface.createTable('cadastros', {
     cpf: {
-      type: Sequelize.LONG,
+      type: Sequelize.STRING,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
