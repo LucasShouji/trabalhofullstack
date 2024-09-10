@@ -1,16 +1,16 @@
 document.getElementById('formCadastro').addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const rua = document.getElementById('pessoa').value;
-    const cidade = document.getElementById('nome').value;
-    const estado = document.getElementById('cpf').value;
-    const cep = document.getElementById('telefone').value;
+    const pessoa = document.getElementById('pessoa').value;
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const telefone = document.getElementById('telefone').value;
 
     const addressData = {
-        pessoa,
-        nome,
-        cpf,
-        telefone
+        pessoa: pessoa,
+        nome: nome,
+        cpf: cpf,
+        telefone: telefone,
     };
 
     try {
