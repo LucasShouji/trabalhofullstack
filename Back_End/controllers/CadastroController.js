@@ -2,28 +2,6 @@ const axios = require('axios');
 const { Cadastro } = require('../models');
 console.log(Cadastro)
 
-exports.createCadastroCpf = async (req, res) => {
-    try {
-        const { cpf } = req.params;
-        const response = await axios.get(`https://viacpf.com.br/ws/${cpf}/json/`);
-
-        if (response.data.erro) {
-            return res.status(404).json({ error: 'CPF não encontrado' });
-        }
-
-        const { pessoa, nome, telefone } = response.data;
-
-        novoCadastro = await Cadastro.create({
-            pessoa: pessoa,
-            nome: nome,
-            cpf: cpf,
-            telefone: telefone
-        });
-
-        res.status(201).json(novoCadastro);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar o cadastro', details: error.message });
-    }};
 
 exports.createCadastroCpf = async (req, res) => {
     try {
@@ -101,6 +79,12 @@ exports.deleteCadastro = async (req, res) => {
         }
 
         await cadastro.destroy();
+
+        res.status(204).send();
+    }catch(error) {
+        res.status(500).json({ error: 'Erro ao buscar cadastro', details: error.message})
+    }
+}
 
         res.status(204).send();
     }catch(error) {
