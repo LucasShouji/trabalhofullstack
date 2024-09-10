@@ -4,7 +4,7 @@ module.exports = {
     port: 5432,
     username: 'postgres',
     password: 'postgres',
-    database: 'api-node',
+    database: 'trabalhofullstack',
     operatorAliases: false,
     define: {
       timestamps: false,
